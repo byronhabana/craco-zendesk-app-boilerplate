@@ -1,0 +1,17 @@
+{
+  "name": "CO Manager",
+  "author": {
+    "name": "Byronn Habana",
+    "email": "byronhartzel@gmail.com"
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "location": {
+    "support": {
+      "nav_bar": "assets/index.html"
+    }
+  },
+  "parameters": [],
+  "version": "1.4",
+  "frameworkVersion": "2.0"
+}
