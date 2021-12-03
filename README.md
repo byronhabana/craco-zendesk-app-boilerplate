@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Getting Started with CRACO Zendesk App Boilerplate
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This boilerplate use CRACO as base for the zendesk app using ZCLI to serve locally.
 
 ## Available Scripts
 
@@ -28,6 +29,12 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn dev`
+
+Runs the app in the development mode with ZCLI.
+Navigate to a ticket and append ?zcli_apps=true to the end of your URL.
+
 
 ### `yarn eject`
 
