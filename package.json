@@ -3,19 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.4.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@zendeskgarden/tailwindcss": "^2.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "BROWSER=none craco start",
+    "build": "GENERATE_SOURCEMAP=false craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "lint": "yarn eslint 'src/**/*.{js,jsx,ts,tsx}' --max-warnings=0",
+    "package": "zcli apps:clean dist && zcli apps:package dist && echo \"Package is ready to upload to Zendesk\"",
+    "server:wait": "wait-on -i 1000 ./dist/manifest.json && zcli apps:server dist",
+    "dev": "concurrently yarn:start yarn:server:wait"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +40,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.8",
+    "clean-webpack-plugin": "^4.0.0",
+    "concurrently": "^6.4.0",
+    "copy-webpack-plugin": "^6.4.1",
+    "postcss": "^7.0.39",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+    "wait-on": "^6.0.0"
   }
 }
